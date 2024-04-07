@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Upload and Archive - Palouse Advocates on Mental Illness</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #9abed6;
+    color: black; /* Changed text color to black */
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white; /* Heading color remains white */
+  }
+
+  .upload-form {
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto; /* Center horizontally */
+    margin-bottom: 20px;
+  }
+
+  .upload-form input[type="file"],
+  .upload-form input[type="text"] {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .upload-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .upload-form input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .image-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    margin: 0 auto; /* Center horizontally */
+    max-width: 800px; /* Limit width */
+  }
+
+  .image-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .image-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .archive-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+  }
+
+  .archive-button:hover {
+    background-color: #d32f2f;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<h1>Image Upload and Archive</h1>
+
+<div class="upload-form">
+  <form action="#" method="POST" enctype="multipart/form-data" id="uploadForm">
+    <input type="file" id="imageFile" name="imageFile" accept="image/*" required>
+    <input type="text" id="imageLink" name="imageLink" placeholder="Link (optional)">
+    <input type="submit" value="Upload">
+  </form>
+</div>
+
+<div class="image-list">
+  <!-- Placeholder image cards -->
+  <div class="image-card">
+    <img src="placeholder.jpg" alt="Placeholder Image">
+    <button class="archive-button">Archive</button>
+  </div>
+  <div class="image-card">
+    <img src="placeholder.jpg" alt="Placeholder Image">
+    <button class="archive-button">Archive</button>
+  </div>
+  <div class="image-card">
+    <img src="placeholder.jpg" alt="Placeholder Image">
+    <button class="archive-button">Archive</button>
+  </div>
+</div>
+
+<script>
+  // Dummy functionality for image upload and archive
+  document.getElementById("uploadForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var imageFile = document.getElementById("imageFile").files[0];
+    var imageLink = document.getElementById("imageLink").value;
+
+    // Perform upload logic (dummy)
+    console.log("Image File:", imageFile);
+    console.log("Image Link:", imageLink);
+
+    // Clear the form after upload
+    document.getElementById("uploadForm").reset();
+  });
+
+  // Dummy functionality for archiving images
+  var archiveButtons = document.querySelectorAll(".archive-button");
+  archiveButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      // Perform archive logic (dummy)
+      var imageCard = this.parentNode;
+      imageCard.remove();
+    });
+  });
+</script>
+
+</body>
+</html>

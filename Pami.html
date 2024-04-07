@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap Carousel</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+/* Your existing CSS styles */
+/* Your existing CSS styles */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #9abed6;
+    padding-top: 46px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+.section {
+    padding: 20px;
+    color: black;
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.contact-form {
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    color: black;
+}
+.contact-form label {
+    font-weight: bold;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.contact-form textarea {
+    height: 150px;
+}
+.contact-form input[type="submit"] {
+    background-color: #4c98af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+.contact-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+.text-container {
+    color: black;
+}
+.navbar {
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    padding: 15px;
+    width: 40%;
+    margin-left: 30%;
+    border-radius: 20px;
+    text-align: center;
+}
+.navbar a {
+    display: inline-block;
+    color: #333;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.widget {
+    position: fixed;
+    top: calc(50% + 20px);
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+.social-button {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    margin-bottom: 5px;
+}
+.twitter {
+    background-image: url('twitter.png');
+}
+.instagram {
+    background-image: url('insta.png');
+}
+.facebook {
+    background-image: url('fb.png');
+}
+#home {
+    padding-top: 150px;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rectangle {
+    background-color: #9abed6;
+    padding: 20px;
+    margin-right: 20px;
+}
+/* Smooth scrolling effect */
+html {
+    scroll-behavior: smooth;
+}
+/* Continuous background color for sections */
+.section {
+    min-height: 100vh;
+    background-color: #9abed6;
+    padding: 10px;
+    color: white;
+}
+/* Font colors for home page */
+#home h1,
+#home h3 {
+    color: #ffffff;
+}
+/* Palouse image with overlay text */
+.palouse-image-container {
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+.palouse-image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+}
+#about {
+    background-color: #9abed6;
+    padding: 10px;
+}
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+.about-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        margin-left: 0;
+        top: 0;
+    }
+}
+/* Center the embedded Google document */
+#iframe {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#programs">Programs</a>
+  <a href="#resources">Resources</a>
+
+</div>
+
+
+<div id="home" class="section">
+  <div class="container">
+    <div class="palouse-image-container">
+      <img src="palouse.jpg" alt="Palouse Field" style="width: 100%; max-height: 500px;">
+      <div class="palouse-image-text">
+        <h1>Palouse Advocates on Mental Illness</h1>
+        <h3>There is Hope in Healing</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="about" class="section">
+  <div class="container">
+    <div class="about-content">
+      <h2>About Palouse Advocates on Mental Illness</h2>
+      <p>Palouse Advocates on Mental Illness is an informal support group for families of people with mental illness, as well as those carrying a diagnosis themselves. We firmly believe that treatment can help people manage their illness and lead to better function and stronger relationships. An important portion of our meetings is checking in with each other.</p>
+      <p>Back in 1981, our Non-Profit Organization realized that by working together we could overcome our challenges much more efficiently, and that is why we ultimately decided to begin this support group.</p>
+    </div>
+  </div>
+  <div id="programs" class="section">
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="image-container">
+          <img src="PAMI.png" alt="PAMI Image">
+        </div>
+        <div class="text-container">
+          <h2>Major Mental Disorders Present</h2>
+          <p>The major mental illnesses our members or their family members have had experience with include:</p>
+          <ul>
+            <li>Depression</li>
+            <li>Bipolar Disorder</li>
+            <li>Schizoaffective Disorder</li>
+            <li>General Anxiety Disorder</li>
+            <li>Schizophrenia Disorder</li>
+            <li>Panic Disorder</li>
+            <li>Post Traumatic-Stress Disorder</li>
+            <li>Suicidal thinking and actions</li>
+            <li>Dual Diagnosis - cooccurring mental illness and substance abuse</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <div id="resources" class="section" style="text-align: center;">
+    <h1>Resources Page</h1>
+    <!-- Embed Google document here -->
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vStjQPXgCaNY2l8ZDWbGszQ5a9QlPWZqG0fIOWOslV1thVb-y_5IDS04h6Bren8f-Rbo-Lb8gdmnU7c/pub?embedded=true" width="800" height="600" frameborder="0" marginheight="0" marginwidth="0" style="display: block; margin: 0 auto;">Loading...</iframe>
+  </div>
+</div>
+
+
+
+<footer>
+  <p>Contact us at: lorrainebcline@gmail.com</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

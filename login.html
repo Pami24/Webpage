@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Palouse Advocates on Mental Illness</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #9abed6;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .login-form {
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .login-form h2 {
+    margin-bottom: 20px;
+  }
+
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .login-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .login-form input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .login-form .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="login-form">
+  <h2>Login</h2>
+  <form action="#" method="POST" id="loginForm">
+    <div class="error-message" id="errorMessage"></div>
+    <input type="text" id="username" name="username" placeholder="Username" required>
+    <input type="password" id="password" name="password" placeholder="Password" required>
+    <input type="submit" value="Login">
+  </form>
+</div>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Validate username and password (dummy validation)
+    if (username === "admin" && password === "admin123") {
+      // Redirect to dashboard or any other page upon successful login
+      window.location.href = "upload.html";
+    } else {
+      document.getElementById("errorMessage").textContent = "Invalid username or password. Please try again.";
+    }
+  });
+</script>
+
+</body>
+</html>
